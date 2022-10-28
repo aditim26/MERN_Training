@@ -1,25 +1,74 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Card from "./Components/Card";
+
+// data is an array and it will become object inside an array 
+const data = [
+  {
+    url:"https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
+    productName: "Random",
+    _id:1,
+    desc: "Lorem bggjmgj",
+  },
+  {
+    url:"https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
+    productName: "Random",
+    _id:2,
+    desc: "Lorem bggjmgj",
+  },
+  {
+    url:"https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
+    productName: "Random",
+    _id:3,
+    desc: "Lorem bggjmgj",
+  },
+  {
+    url:"https://www.patterns.dev/img/reactjs/react-logo@3x.svg",
+    productName: "Random",
+    _id:4,
+    desc: "Lorem bggjmgj",
+  },
+];
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const title = "hey...";
+  return(
+    <div className='Container'>
+      {/* we use curly brackets to write variable name */}
+      <h1>{title}</h1>
+      <br/>
+      <div className='row'>
+        {
+          data.map((val, i) => {
+            return (
+              <div className='col-6 col-sm-4 col-md-3'>
+              <Card values={val} />
+              </div>
+            ); 
+          })
+        }
+
+        {/* <div className='col-6 col-sm-4 col-md-3'>
+          <Card />
+        </div>
+
+        <div className='col-6 col-sm-4 col-md-3'>
+          <Card />
+        </div>
+
+        <div className='col-6 col-sm-4 col-md-3'>
+          <Card />
+        </div>
+
+        <div className='col-6 col-sm-4 col-md-3'>
+          <Card />
+        </div> */}
+
+      </div>
+    </div>
+
+  );
 }
 
 export default App;
